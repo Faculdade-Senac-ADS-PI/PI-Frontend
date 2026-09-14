@@ -1,0 +1,138 @@
+export const categories = [
+  { id: "eletrica", name: "Elétrica", icon: "zap", description: "Instalações e reparos elétricos" },
+  { id: "hidraulica", name: "Hidráulica", icon: "droplets", description: "Encanamento e vazamentos" },
+  { id: "pintura", name: "Pintura", icon: "paintbrush", description: "Pintura residencial e comercial" },
+  { id: "marcenaria", name: "Marcenaria", icon: "hammer", description: "Móveis e estruturas de madeira" },
+  { id: "reformas", name: "Reformas", icon: "hard-hat", description: "Obras e acabamentos" },
+  { id: "eletronicos", name: "Eletrônicos", icon: "cpu", description: "Reparo de aparelhos eletrônicos" },
+  { id: "limpeza", name: "Limpeza", icon: "sparkles", description: "Limpeza residencial e comercial" },
+  { id: "informatica", name: "Informática", icon: "laptop", description: "Suporte e montagem de computadores" },
+]
+
+export const workers = [
+  {
+    id: 1,
+    name: "Carlos Pereira",
+    photo: "https://i.pravatar.cc/150?img=12",
+    categories: ["eletrica"],
+    title: "Eletricista profissional",
+    description: "Instalações elétricas residenciais e comerciais, reparos, quadros de energia e iluminação. Atendo toda a cidade com garantia de serviço.",
+    rating: 4.8,
+    reviewsCount: 42,
+    pricePerHour: 60,
+    city: "São Paulo",
+    yearsExperience: 12,
+    verified: true,
+  },
+  {
+    id: 2,
+    name: "Mariana Souza",
+    photo: "https://i.pravatar.cc/150?img=47",
+    categories: ["pintura"],
+    title: "Pintora residencial",
+    description: "Pintura interna e externa, acabamentos finos e papel de parede. Trabalho com materiais de qualidade e prazos firmados.",
+    rating: 4.9,
+    reviewsCount: 28,
+    pricePerHour: 45,
+    city: "Campinas",
+    yearsExperience: 8,
+    verified: true,
+  },
+  {
+    id: 3,
+    name: "João Almeida",
+    photo: "https://i.pravatar.cc/150?img=12",
+    categories: ["hidraulica"],
+    title: "Encanador e bombeiro hidráulico",
+    description: "Conserto de vazamentos, troca de torneiras e chuveiros, desentupimentos e instalação de sistemas hidráulicos.",
+    rating: 4.6,
+    reviewsCount: 55,
+    pricePerHour: 55,
+    city: "São Paulo",
+    yearsExperience: 15,
+    verified: true,
+  },
+  {
+    id: 4,
+    name: "Fernanda Lima",
+    photo: "https://i.pravatar.cc/150?img=32",
+    categories: ["informatica"],
+    title: "Técnica em informática",
+    description: "Montagem e manutenção de computadores, instalação de softwares, resolução de problemas de rede e recuperação de dados.",
+    rating: 4.7,
+    reviewsCount: 19,
+    pricePerHour: 70,
+    city: "Santos",
+    yearsExperience: 5,
+    verified: false,
+  },
+  {
+    id: 5,
+    name: "Rodrigo Santos",
+    photo: "https://i.pravatar.cc/150?img=15",
+    categories: ["marcenaria"],
+    title: "Marceneiro artesanal",
+    description: "Móveis sob medida, reparos em madeira, restauração de peças antigas e projetos personalizados.",
+    rating: 5.0,
+    reviewsCount: 33,
+    pricePerHour: 75,
+    city: "São Paulo",
+    yearsExperience: 20,
+    verified: true,
+  },
+  {
+    id: 6,
+    name: "Ana Beatriz Costa",
+    photo: "https://i.pravatar.cc/150?img=45",
+    categories: ["eletronicos"],
+    title: "Reparo de celulares e tablets",
+    description: "Troca de telas, baterias, conectores e reparos em placas. Faço orçamento sem compromisso.",
+    rating: 4.5,
+    reviewsCount: 61,
+    pricePerHour: 50,
+    city: "Guarulhos",
+    yearsExperience: 6,
+    verified: false,
+  },
+  {
+    id: 7,
+    name: "Paulo Roberto Dias",
+    photo: "https://i.pravatar.cc/150?img=53",
+    categories: ["reformas"],
+    title: "Pedreiro e mestre de obras",
+    description: "Reformas em geral, construção de muros, pisos, revestimentos e pequenas obras. Trabalho junto com equipe qualificada.",
+    rating: 4.4,
+    reviewsCount: 47,
+    pricePerHour: 65,
+    city: "Osasco",
+    yearsExperience: 18,
+    verified: true,
+  },
+  {
+    id: 8,
+    name: "Laura Fernandes",
+    photo: "https://i.pravatar.cc/150?img=23",
+    categories: ["limpeza"],
+    title: "Serviços de limpeza",
+    description: "Limpeza pós-obra, limpeza residencial pesada, organização de ambientes e conservação de escritórios.",
+    rating: 4.9,
+    reviewsCount: 74,
+    pricePerHour: 35,
+    city: "São Paulo",
+    yearsExperience: 4,
+    verified: true,
+  },
+]
+
+export function getMockWorkers(categoryId) {
+  if (!categoryId) return workers
+  return workers.filter((worker) => worker.categories.includes(categoryId))
+}
+
+export function getMockWorkerById(id) {
+  return workers.find((worker) => String(worker.id) === String(id))
+}
+
+export function getMockCategoryById(categoryId) {
+  return categories.find((category) => category.id === categoryId)
+}
