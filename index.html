@@ -3,18 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#111731" />
     <meta
       name="description"
       content="Plataforma de divulgação de serviços e contratação de trabalhadores autônomos."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <script>
+      ;(() => {
+        try {
+          const stored = localStorage.getItem("chamaserv-theme")
+          const theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: light)").matches
+                ? "light"
+                : "dark"
+          const root = document.documentElement
+          root.classList.toggle("dark", theme === "dark")
+          root.classList.toggle("light", theme === "light")
+          root.dataset.theme = theme
+          root.style.colorScheme = theme
+          document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute("content", theme === "dark" ? "#111731" : "#fcfbf8")
+        } catch {
+          /* localStorage can be unavailable in private contexts. */
+        }
+      })()
+    </script>
     <title>ChamaServ — Contrate profissionais autônomos</title>
   </head>
   <body>

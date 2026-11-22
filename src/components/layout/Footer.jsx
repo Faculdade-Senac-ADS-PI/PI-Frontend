@@ -58,7 +58,7 @@ export function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+                className="grid h-10 w-10 place-items-center rounded-xl border border-foreground/10 bg-foreground/[0.04] text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
               >
                 <Icon className="h-4 w-4" />
               </a>
@@ -132,7 +132,7 @@ export function Footer() {
             </li>
           </ul>
 
-          <div className="mt-5 rounded-2xl border border-white/[0.07] bg-white/[0.03] p-3.5">
+          <div className="mt-5 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.03] p-3.5">
             <div className="flex items-center gap-2 text-xs font-medium text-foreground">
               <ShieldCheck className="h-4 w-4 text-primary" />
               Contratação protegida
@@ -144,8 +144,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="relative border-t border-white/[0.07]">
-        <div className="shell flex flex-col items-center justify-between gap-3 py-5 text-xs text-muted-foreground sm:flex-row">
+      <div className="relative border-t border-foreground/[0.07]">
+        <div className="shell safe-bottom flex flex-col items-center justify-between gap-3 pt-5 text-xs text-muted-foreground sm:flex-row">
           <p>
             © {new Date().getFullYear()} ChamaServ — Projeto Integrador
           </p>

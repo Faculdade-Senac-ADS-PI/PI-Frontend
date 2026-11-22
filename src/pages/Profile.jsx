@@ -51,7 +51,7 @@ export default function Profile() {
     return (
       <div className="shell py-24">
         <div className="glass mx-auto max-w-lg rounded-3xl px-8 py-16 text-center">
-          <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-white/10 bg-white/[0.04] text-muted-foreground">
+          <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-foreground/10 bg-foreground/[0.04] text-muted-foreground">
             <UserRound className="h-7 w-7" />
           </span>
           <h1 className="mt-5 font-display text-2xl font-bold">
@@ -114,7 +114,7 @@ export default function Profile() {
             <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
                 <div className="group relative -mt-14 w-fit shrink-0 rounded-full bg-gold-gradient p-[3px] shadow-glow">
-                  <Avatar className="h-24 w-24 border-4 border-[#121831] sm:h-28 sm:w-28">
+                  <Avatar className="h-24 w-24 border-4 border-background sm:h-28 sm:w-28">
                     <AvatarImage
                       src={user.photoUrl || "https://i.pravatar.cc/150?img=12"}
                       alt={user.name}
@@ -126,7 +126,7 @@ export default function Profile() {
                   <button
                     type="button"
                     aria-label="Alterar foto de perfil"
-                    className="absolute bottom-1 right-1 grid h-8 w-8 place-items-center rounded-full border-2 border-[#121831] bg-gold-gradient text-primary-foreground transition-transform duration-300 hover:scale-110"
+                    className="absolute bottom-1 right-1 grid h-8 w-8 place-items-center rounded-full border-2 border-background bg-gold-gradient text-primary-foreground transition-transform duration-300 hover:scale-110"
                   >
                     <Camera className="h-3.5 w-3.5" />
                   </button>
@@ -169,14 +169,14 @@ export default function Profile() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-3">
+              <div className="flex items-center gap-4 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.03] px-4 py-3">
                 <div
                   className="grid h-[68px] w-[68px] place-items-center rounded-full"
                   style={{
-                    background: `conic-gradient(#f0a202 ${completion * 3.6}deg, rgba(255,255,255,0.08) 0deg)`,
+                    background: `conic-gradient(hsl(var(--primary)) ${completion * 3.6}deg, hsl(var(--foreground) / 0.08) 0deg)`,
                   }}
                 >
-                  <div className="grid h-[56px] w-[56px] place-items-center rounded-full bg-[#151c38]">
+                  <div className="grid h-[56px] w-[56px] place-items-center rounded-full bg-card">
                     <span className="font-display text-sm font-bold text-foreground">
                       {completion}%
                     </span>
@@ -319,7 +319,7 @@ export default function Profile() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-3 border-t border-white/[0.07] pt-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-3 border-t border-foreground/[0.07] pt-5 sm:flex-row sm:items-center sm:justify-between">
                   <Button type="submit">
                     <Save className="h-4 w-4" />
                     Salvar alterações
@@ -352,7 +352,7 @@ export default function Profile() {
                       {item.done ? (
                         <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
                       ) : (
-                        <Circle className="h-4 w-4 shrink-0 text-white/20" />
+                        <Circle className="h-4 w-4 shrink-0 text-foreground/20" />
                       )}
                       <span
                         className={cn(
@@ -378,7 +378,7 @@ export default function Profile() {
                   Visibilidade
                 </h3>
 
-                <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-white/[0.07] bg-white/[0.03] px-3.5 py-3">
+                <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border border-foreground/[0.07] bg-foreground/[0.03] px-3.5 py-3">
                   <div>
                     <p className="text-xs font-medium text-foreground">
                       {isWorker ? "Aceitar novos pedidos" : "Receber novidades"}
@@ -396,7 +396,7 @@ export default function Profile() {
                       "relative h-6 w-11 shrink-0 rounded-full border transition-colors duration-300",
                       accepting
                         ? "border-primary/40 bg-primary/30"
-                        : "border-white/10 bg-white/[0.06]"
+                        : "border-foreground/10 bg-foreground/[0.06]"
                     )}
                   >
                     <span
@@ -404,7 +404,7 @@ export default function Profile() {
                         "absolute top-[3px] h-[18px] w-[18px] rounded-full transition-all duration-300",
                         accepting
                           ? "left-[1.3rem] bg-gold-gradient shadow-glow"
-                          : "left-0.5 bg-white/40"
+                          : "left-0.5 bg-foreground/40"
                       )}
                     />
                   </button>

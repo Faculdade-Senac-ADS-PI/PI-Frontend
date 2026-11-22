@@ -89,7 +89,7 @@ export default function WorkerDetail() {
     return (
       <div className="shell py-24">
         <div className="glass mx-auto max-w-lg rounded-3xl px-8 py-16 text-center">
-          <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-white/10 bg-white/[0.04] text-muted-foreground">
+          <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-foreground/10 bg-foreground/[0.04] text-muted-foreground">
             <Award className="h-7 w-7" />
           </span>
           <h1 className="mt-5 font-display text-2xl font-bold">
@@ -127,7 +127,7 @@ export default function WorkerDetail() {
             to="/buscar"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/[0.04]">
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-foreground/10 bg-foreground/[0.04]">
               <ArrowLeft className="h-4 w-4" />
             </span>
             Voltar para a busca
@@ -142,7 +142,7 @@ export default function WorkerDetail() {
                 "inline-flex h-9 items-center gap-1.5 rounded-full border px-3.5 text-xs font-medium transition-all duration-300",
                 saved
                   ? "border-fiery-terracotta/40 bg-fiery-terracotta/15 text-fiery-terracotta"
-                  : "border-white/10 bg-white/[0.04] text-muted-foreground hover:border-white/20 hover:text-foreground"
+                  : "border-foreground/10 bg-foreground/[0.04] text-muted-foreground hover:border-foreground/20 hover:text-foreground"
               )}
             >
               <Heart className={cn("h-3.5 w-3.5", saved && "fill-current")} />
@@ -150,7 +150,7 @@ export default function WorkerDetail() {
             </button>
             <button
               type="button"
-              className="inline-flex h-9 items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3.5 text-xs font-medium text-muted-foreground transition-all duration-300 hover:border-white/20 hover:text-foreground"
+              className="inline-flex h-9 items-center gap-1.5 rounded-full border border-foreground/10 bg-foreground/[0.04] px-3.5 text-xs font-medium text-muted-foreground transition-all duration-300 hover:border-foreground/20 hover:text-foreground"
             >
               <Share2 className="h-3.5 w-3.5" />
               Compartilhar
@@ -167,7 +167,7 @@ export default function WorkerDetail() {
                 <div className="absolute inset-0 grid-overlay opacity-50" />
                 <div className="absolute -right-10 -top-16 h-52 w-52 rounded-full bg-golden-orange/25 blur-[70px]" />
                 <div className="absolute -bottom-20 left-16 h-44 w-44 rounded-full bg-fiery-terracotta/20 blur-[70px]" />
-                <div className="absolute right-5 top-5 flex items-center gap-2 rounded-full border border-white/10 bg-black/25 px-3 py-1.5 text-[11px] text-white/90 backdrop-blur-md">
+                <div className="absolute right-5 top-5 flex items-center gap-2 rounded-full border border-white/15 bg-black/25 px-3 py-1.5 text-[11px] text-white/90 backdrop-blur-md">
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-70" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
@@ -180,14 +180,14 @@ export default function WorkerDetail() {
                 <div className="-mt-14 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
                   <div className="flex items-end gap-4">
                     <div className="relative shrink-0 rounded-full bg-gold-gradient p-[3px] shadow-glow">
-                      <Avatar className="h-24 w-24 border-4 border-[#121831]">
+                      <Avatar className="h-24 w-24 border-4 border-background">
                         <AvatarImage src={worker.photo} alt={worker.name} />
                         <AvatarFallback className="text-2xl">
                           {worker.name.charAt(0)}
                         </AvatarFallback>
                       </Avatar>
                       {worker.verified && (
-                        <span className="absolute bottom-1 right-1 grid h-7 w-7 place-items-center rounded-full border-2 border-[#121831] bg-gold-gradient">
+                        <span className="absolute bottom-1 right-1 grid h-7 w-7 place-items-center rounded-full border-2 border-background bg-gold-gradient">
                           <BadgeCheck className="h-4 w-4 text-primary-foreground" />
                         </span>
                       )}
@@ -271,7 +271,7 @@ export default function WorkerDetail() {
                   ].map(({ icon: Icon, label }) => (
                     <div
                       key={label}
-                      className="flex items-center gap-2.5 rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3 text-xs text-foreground/85"
+                      className="flex items-center gap-2.5 rounded-xl border border-foreground/[0.07] bg-foreground/[0.03] px-3 py-3 text-xs text-foreground/85"
                     >
                       <Icon className="h-4 w-4 shrink-0 text-primary" />
                       {label}
@@ -321,12 +321,12 @@ export default function WorkerDetail() {
                   {DAYS.map((day) => (
                     <span
                       key={day}
-                      className="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-foreground/80"
+                      className="rounded-xl border border-foreground/10 bg-foreground/[0.04] px-3 py-1.5 text-xs text-foreground/80"
                     >
                       {day}
                     </span>
                   ))}
-                  <span className="rounded-xl border border-white/[0.05] bg-white/[0.02] px-3 py-1.5 text-xs text-muted-foreground/50 line-through">
+                  <span className="rounded-xl border border-foreground/[0.05] bg-foreground/[0.02] px-3 py-1.5 text-xs text-muted-foreground/50 line-through">
                     Dom
                   </span>
                 </div>
@@ -350,7 +350,7 @@ export default function WorkerDetail() {
                 </div>
 
                 <div className="mt-6 grid gap-6 sm:grid-cols-[10rem_1fr] sm:items-center">
-                  <div className="rounded-2xl border border-white/[0.07] bg-white/[0.03] px-4 py-5 text-center">
+                  <div className="rounded-2xl border border-foreground/[0.07] bg-foreground/[0.03] px-4 py-5 text-center">
                     <p className="font-display text-4xl font-extrabold">
                       {worker.rating}
                     </p>
@@ -390,10 +390,10 @@ export default function WorkerDetail() {
                   {REVIEWS.map((review) => (
                     <div
                       key={review.name}
-                      className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4 transition-colors duration-300 hover:border-white/15 hover:bg-white/[0.04]"
+                      className="rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] p-4 transition-colors duration-300 hover:border-foreground/15 hover:bg-foreground/[0.04]"
                     >
                       <div className="flex items-start gap-3">
-                        <Avatar className="h-9 w-9 border border-white/10">
+                        <Avatar className="h-9 w-9 border border-foreground/10">
                           <AvatarImage src={review.photo} alt={review.name} />
                           <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
                         </Avatar>
@@ -561,7 +561,7 @@ export default function WorkerDetail() {
           </Reveal>
 
           <Reveal delay={200}>
-            <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-5 py-4 text-[11px] leading-relaxed text-muted-foreground">
+            <div className="rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] px-5 py-4 text-[11px] leading-relaxed text-muted-foreground">
               Nunca faça pagamentos antecipados fora da plataforma. Combine tudo
               pelo painel para manter seu histórico protegido.
             </div>

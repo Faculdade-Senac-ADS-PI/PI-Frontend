@@ -17,11 +17,11 @@ const buttonVariants = cva(
         default:
           "bg-gold-gradient bg-[length:200%_200%] text-primary-foreground shadow-glow hover:-translate-y-0.5 hover:bg-[position:100%_50%] hover:shadow-glow-lg",
         secondary:
-          "border border-white/10 bg-white/10 text-foreground backdrop-blur-xl hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/15",
+          "border border-foreground/10 bg-foreground/10 text-foreground backdrop-blur-xl hover:-translate-y-0.5 hover:border-foreground/20 hover:bg-foreground/15",
         outline:
-          "border border-white/15 bg-white/[0.03] text-foreground backdrop-blur-md hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary",
+          "border border-foreground/15 bg-foreground/[0.03] text-foreground backdrop-blur-md hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/10 hover:text-primary",
         ghost:
-          "text-muted-foreground hover:bg-white/10 hover:text-foreground",
+          "text-muted-foreground hover:bg-foreground/10 hover:text-foreground",
         destructive:
           "bg-gradient-to-r from-fiery-terracotta to-[#b8452a] text-white shadow-glow-terracotta hover:-translate-y-0.5 hover:brightness-110",
         link: "text-primary underline-offset-4 hover:underline",

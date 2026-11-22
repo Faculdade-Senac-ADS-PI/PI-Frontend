@@ -195,9 +195,9 @@ function ActivityList({ items }) {
       {items.map((item) => (
         <div
           key={item.title}
-          className="group flex items-center gap-3 rounded-2xl border border-transparent px-3 py-3 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.04]"
+          className="group flex items-center gap-3 rounded-2xl border border-transparent px-3 py-3 transition-all duration-300 hover:border-foreground/10 hover:bg-foreground/[0.04]"
         >
-          <Avatar className="h-10 w-10 shrink-0 border border-white/10">
+          <Avatar className="h-10 w-10 shrink-0 border border-foreground/10">
             <AvatarImage src={item.photo} alt={item.title} />
             <AvatarFallback>{item.title.charAt(0)}</AvatarFallback>
           </Avatar>
@@ -248,9 +248,9 @@ function QuickActions({ isWorker }) {
             <Link
               key={label}
               to={to}
-              className="group flex items-center gap-3 rounded-xl border border-transparent px-2.5 py-2.5 text-xs font-medium text-muted-foreground transition-all duration-300 hover:border-white/10 hover:bg-white/[0.05] hover:text-foreground"
+              className="group flex items-center gap-3 rounded-xl border border-transparent px-2.5 py-2.5 text-xs font-medium text-muted-foreground transition-all duration-300 hover:border-foreground/10 hover:bg-foreground/[0.05] hover:text-foreground"
             >
-              <span className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 bg-white/[0.04] text-primary/80 transition-colors group-hover:border-primary/30 group-hover:text-primary">
+              <span className="grid h-8 w-8 place-items-center rounded-lg border border-foreground/10 bg-foreground/[0.04] text-primary/80 transition-colors group-hover:border-primary/30 group-hover:text-primary">
                 <Icon className="h-3.5 w-3.5" />
               </span>
               {label}
@@ -274,10 +274,10 @@ function ProfileProgress() {
           <div
             className="grid h-[70px] w-[70px] shrink-0 place-items-center rounded-full"
             style={{
-              background: `conic-gradient(#f0a202 ${completion * 3.6}deg, rgba(255,255,255,0.08) 0deg)`,
+              background: `conic-gradient(hsl(var(--primary)) ${completion * 3.6}deg, hsl(var(--foreground) / 0.08) 0deg)`,
             }}
           >
-            <div className="grid h-[58px] w-[58px] place-items-center rounded-full bg-[#141a33]">
+            <div className="grid h-[58px] w-[58px] place-items-center rounded-full bg-card">
               <span className="font-display text-sm font-bold">{completion}%</span>
             </div>
           </div>
@@ -394,7 +394,7 @@ function PerformanceCard() {
           ].map((metric) => (
             <div
               key={metric.label}
-              className="rounded-xl border border-white/[0.07] bg-white/[0.03] px-3 py-3"
+              className="rounded-xl border border-foreground/[0.07] bg-foreground/[0.03] px-3 py-3"
             >
               <p className="font-display text-lg font-bold text-foreground">
                 {metric.value}
@@ -431,7 +431,7 @@ export default function Dashboard() {
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="flex items-center gap-4">
             <div className="rounded-full bg-gold-gradient p-[2px] shadow-glow">
-              <Avatar className="h-16 w-16 border-2 border-[#121831] sm:h-[4.5rem] sm:w-[4.5rem]">
+              <Avatar className="h-16 w-16 border-2 border-background sm:h-[4.5rem] sm:w-[4.5rem]">
                 <AvatarImage
                   src={user?.photoUrl || "https://i.pravatar.cc/150?img=12"}
                   alt={user?.name}
@@ -604,9 +604,9 @@ export default function Dashboard() {
                       <Link
                         key={pro.name}
                         to={`/profissional/${pro.id}`}
-                        className="group flex items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.03] p-3.5 transition-all duration-300 hover:border-primary/30 hover:bg-white/[0.06]"
+                        className="group flex items-center gap-3 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.03] p-3.5 transition-all duration-300 hover:border-primary/30 hover:bg-foreground/[0.06]"
                       >
-                        <Avatar className="h-11 w-11 border border-white/10">
+                        <Avatar className="h-11 w-11 border border-foreground/10">
                           <AvatarImage src={pro.photo} alt={pro.name} />
                           <AvatarFallback>{pro.name.charAt(0)}</AvatarFallback>
                         </Avatar>

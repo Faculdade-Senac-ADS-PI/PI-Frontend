@@ -61,7 +61,7 @@ export default function NotFound() {
               </Button>
             </div>
 
-            <div className="mt-9 border-t border-white/[0.07] pt-6">
+            <div className="mt-9 border-t border-foreground/[0.07] pt-6">
               <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
                 Talvez você procurava
               </p>
@@ -70,7 +70,7 @@ export default function NotFound() {
                   <Link
                     key={label}
                     to={to}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-xs text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-foreground/10 bg-foreground/[0.04] px-3.5 py-1.5 text-xs text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
                   >
                     <Icon className="h-3.5 w-3.5" />
                     {label}
