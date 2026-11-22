@@ -66,7 +66,7 @@ export default function Login() {
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch lg:gap-8">
         <Reveal
           variant="left"
-          className="relative hidden overflow-hidden rounded-[2rem] border border-white/10 bg-space-indigo/40 p-10 backdrop-blur-2xl lg:flex lg:flex-col lg:justify-between"
+          className="force-dark relative hidden overflow-hidden rounded-[2rem] border border-foreground/10 bg-space-indigo/70 p-10 text-foreground backdrop-blur-2xl lg:flex lg:flex-col lg:justify-between"
         >
           <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
           <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-golden-orange/25 blur-[90px] animate-pulse-glow" />
@@ -112,7 +112,7 @@ export default function Login() {
             </div>
           </div>
 
-          <div className="relative mt-10 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl">
+          <div className="relative mt-10 rounded-2xl border border-foreground/10 bg-foreground/[0.04] p-4 backdrop-blur-xl">
             <p className="text-xs leading-relaxed text-foreground/85">
               “Em menos de uma hora encontrei um eletricista excelente. O painel
               deixou tudo simples e transparente.”
@@ -121,7 +121,7 @@ export default function Login() {
               <img
                 src="https://i.pravatar.cc/80?img=44"
                 alt=""
-                className="h-8 w-8 rounded-full border border-white/10 object-cover"
+                className="h-8 w-8 rounded-full border border-foreground/10 object-cover"
               />
               <div>
                 <p className="text-[11px] font-semibold text-foreground">
@@ -201,7 +201,7 @@ export default function Login() {
                       aria-label={
                         showPassword ? "Ocultar senha" : "Mostrar senha"
                       }
-                      className="absolute right-3 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
+                      className="absolute right-3 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-foreground/10 hover:text-foreground"
                     >
                       {showPassword ? (
                         <EyeOff className="h-4 w-4" />
@@ -224,11 +224,11 @@ export default function Login() {
               </form>
 
               <div className="my-6 flex items-center gap-3">
-                <span className="h-px flex-1 bg-white/10" />
+                <span className="h-px flex-1 bg-foreground/10" />
                 <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
                   ainda não tem conta?
                 </span>
-                <span className="h-px flex-1 bg-white/10" />
+                <span className="h-px flex-1 bg-foreground/10" />
               </div>
 
               <Button variant="outline" className="w-full" asChild>

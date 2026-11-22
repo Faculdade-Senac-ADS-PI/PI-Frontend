@@ -13,6 +13,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Logo } from "@/components/shared/Logo"
+import { ThemeToggle } from "@/components/shared/ThemeToggle"
 import { cn } from "@/lib/utils"
 import {
   DropdownMenu,
@@ -49,6 +50,17 @@ export function Navbar() {
     setMobileOpen(false)
   }, [location.pathname])
 
+  useEffect(() => {
+    if (!mobileOpen) return
+
+    function onKeyDown(event) {
+      if (event.key === "Escape") setMobileOpen(false)
+    }
+
+    document.addEventListener("keydown", onKeyDown)
+    return () => document.removeEventListener("keydown", onKeyDown)
+  }, [mobileOpen])
+
   function handleLogout() {
     logout()
     navigate("/")
@@ -67,12 +79,12 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4">
+    <header className="app-header sticky top-0 z-50 px-3 sm:px-4">
       <div
         className={cn(
           "glass-strong mx-auto flex h-16 max-w-7xl items-center gap-3 rounded-2xl px-3 transition-all duration-500 sm:px-4",
           scrolled &&
-            "h-[60px] border-white/15 bg-[#0f1530]/85 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.95)]"
+            "h-[60px] border-foreground/15 bg-background/90 shadow-[0_20px_60px_-30px_rgba(15,23,42,0.28)] dark:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.95)]"
         )}
       >
         <Link
@@ -93,7 +105,7 @@ export function Navbar() {
             <input
               name="search"
               placeholder="Buscar profissionais, serviços..."
-              className="h-10 w-full rounded-full border border-white/10 bg-white/[0.04] pl-10 pr-4 text-sm text-foreground outline-none transition-all duration-300 placeholder:text-muted-foreground/60 hover:border-white/20 focus:border-primary/50 focus:bg-white/[0.07] focus:ring-2 focus:ring-primary/20"
+              className="h-10 w-full rounded-full border border-foreground/10 bg-foreground/[0.04] pl-10 pr-4 text-sm text-foreground outline-none transition-all duration-300 placeholder:text-muted-foreground/60 hover:border-foreground/20 focus:border-primary/50 focus:bg-foreground/[0.07] focus:ring-2 focus:ring-primary/20"
             />
           </div>
         </form>
@@ -104,6 +116,7 @@ export function Navbar() {
               key={link.to}
               to={link.to}
               data-active={isActive(link.to)}
+              aria-current={isActive(link.to) ? "page" : undefined}
               className="nav-link"
             >
               {link.label}
@@ -112,6 +125,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <ThemeToggle compact />
           {user ? (
             <>
               <Button variant="ghost" size="sm" asChild>
@@ -127,7 +141,7 @@ export function Navbar() {
                     aria-label="Abrir menu da conta"
                   >
                     <span className="block rounded-full bg-gold-gradient p-[2px] transition-transform duration-300 group-hover:scale-105">
-                      <Avatar className="h-9 w-9 border-2 border-[#0f1530]">
+                      <Avatar className="h-9 w-9 border-2 border-background">
                         <AvatarImage
                           src={user.photoUrl || "https://i.pravatar.cc/100"}
                           alt={user.name}
@@ -187,22 +201,26 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileOpen((open) => !open)}
-          className="ml-auto grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-foreground transition-colors hover:bg-white/10 md:hidden"
+          className="ml-auto grid h-10 w-10 place-items-center rounded-xl border border-foreground/10 bg-foreground/[0.04] text-foreground transition-colors hover:bg-foreground/10 md:hidden"
           aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={mobileOpen}
+          aria-controls="menu-mobile"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="glass-strong mx-auto mt-2 max-w-7xl animate-slide-down rounded-2xl p-4 md:hidden">
+        <div
+          id="menu-mobile"
+          className="glass-strong mx-auto mt-2 max-w-7xl animate-slide-down rounded-2xl p-4 md:hidden"
+        >
           <form onSubmit={handleSubmitSearch} className="relative mb-3">
             <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/70" />
             <input
               name="search"
               placeholder="Buscar profissionais..."
-              className="h-11 w-full rounded-xl border border-white/10 bg-white/[0.04] pl-10 pr-4 text-sm text-foreground outline-none placeholder:text-muted-foreground/60 focus:border-primary/50"
+              className="h-11 w-full rounded-xl border border-foreground/10 bg-foreground/[0.04] pl-10 pr-4 text-sm text-foreground outline-none placeholder:text-muted-foreground/60 focus:border-primary/50"
             />
           </form>
 
@@ -211,7 +229,7 @@ export function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+                className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
               >
                 {link.label}
               </Link>
@@ -220,13 +238,13 @@ export function Navbar() {
               <>
                 <Link
                   to="/dashboard"
-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
                 >
                   Meu painel
                 </Link>
                 <Link
                   to="/perfil"
-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/[0.06] hover:text-foreground"
                 >
                   Meu perfil
                 </Link>
@@ -234,7 +252,11 @@ export function Navbar() {
             )}
           </nav>
 
-          <div className="mt-3 grid gap-2 border-t border-white/10 pt-3">
+          <div className="mt-3">
+            <ThemeToggle />
+          </div>
+
+          <div className="mt-3 grid gap-2 border-t border-foreground/10 pt-3">
             {user ? (
               <Button variant="outline" onClick={handleLogout} className="w-full">
                 <LogOut className="h-4 w-4" />

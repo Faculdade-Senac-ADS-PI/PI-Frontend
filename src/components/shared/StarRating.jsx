@@ -20,7 +20,7 @@ export function StarRating({
               "transition-colors duration-300",
               index < Math.round(rating)
                 ? "fill-golden-orange text-golden-orange drop-shadow-[0_0_6px_rgba(240,162,2,0.45)]"
-                : "fill-transparent text-white/20"
+                : "fill-transparent text-foreground/20"
             )}
           />
         ))}

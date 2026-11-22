@@ -5,8 +5,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["Sora", "Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: [
+          '"Inter Variable"',
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+        display: [
+          '"Sora Variable"',
+          "Sora",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,8 +65,26 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 4px)",
         sm: "calc(var(--radius) - 8px)",
+        "1.5": "0.375rem",
+        "2.5": "0.625rem",
+        "3.5": "0.875rem",
+        "4": "1rem",
+        "4.5": "1.125rem",
+        "5.5": "1.375rem",
+        "6": "1.5rem",
+        "6.5": "1.625rem",
+        "7": "1.75rem",
         "4xl": "2rem",
         "5xl": "2.5rem",
+        panel: "var(--radius-panel)",
+      },
+      spacing: {
+        "4.5": "1.125rem",
+        "5.5": "1.375rem",
+        "6.5": "1.625rem",
+        "7.5": "1.875rem",
+        18: "4.5rem",
+        22: "5.5rem",
       },
       boxShadow: {
         glow: "0 18px 50px -18px rgba(240, 162, 2, 0.55)",
@@ -61,6 +92,10 @@ export default {
         "glow-terracotta": "0 20px 60px -22px rgba(217, 93, 57, 0.55)",
         glass:
           "0 30px 80px -40px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
+        "surface-xl":
+          "0 32px 90px -44px rgba(0, 0, 0, 0.9), 0 18px 50px -32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08)",
+        "surface-soft":
+          "0 18px 50px -30px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.06)",
       },
       backgroundImage: {
         "gold-gradient":

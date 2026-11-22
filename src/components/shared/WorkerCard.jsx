@@ -30,13 +30,13 @@ export function WorkerCard({ worker }) {
           <div className="flex items-start gap-4">
             <div className="relative shrink-0">
               <div className="rounded-full bg-gold-gradient p-[2px] shadow-glow transition-transform duration-500 group-hover:scale-105">
-                <Avatar className="h-14 w-14 border-2 border-[#131a33]">
+                <Avatar className="h-14 w-14 border-2 border-background">
                   <AvatarImage src={worker.photo} alt={worker.name} />
                   <AvatarFallback>{worker.name.charAt(0)}</AvatarFallback>
                 </Avatar>
               </div>
               {worker.verified && (
-                <span className="absolute -bottom-1 -right-1 grid h-6 w-6 place-items-center rounded-full border-2 border-[#131a33] bg-gold-gradient">
+                <span className="absolute -bottom-1 -right-1 grid h-6 w-6 place-items-center rounded-full border-2 border-background bg-gold-gradient">
                   <BadgeCheck className="h-3.5 w-3.5 text-primary-foreground" />
                 </span>
               )}
@@ -87,7 +87,7 @@ export function WorkerCard({ worker }) {
           </div>
         </CardContent>
 
-        <CardFooter className="relative flex items-center justify-between gap-3 border-t border-white/[0.07] px-6 py-4">
+        <CardFooter className="relative flex items-center justify-between gap-3 border-t border-foreground/[0.07] px-6 py-4">
           <div>
             <span className="text-[11px] uppercase tracking-wider text-muted-foreground">
               A partir de
@@ -99,7 +99,7 @@ export function WorkerCard({ worker }) {
               </span>
             </p>
           </div>
-          <span className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-muted-foreground transition-all duration-500 group-hover:border-primary/40 group-hover:bg-primary/15 group-hover:text-primary">
+          <span className="grid h-10 w-10 place-items-center rounded-full border border-foreground/10 bg-foreground/[0.05] text-muted-foreground transition-all duration-500 group-hover:border-primary/40 group-hover:bg-primary/15 group-hover:text-primary">
             <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </span>
         </CardFooter>

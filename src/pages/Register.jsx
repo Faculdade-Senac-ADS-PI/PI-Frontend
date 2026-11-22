@@ -56,7 +56,7 @@ function RoleOption({ value, current, icon: Icon, title, description }) {
         "group relative cursor-pointer rounded-2xl border p-4 transition-all duration-300",
         active
           ? "border-primary/40 bg-primary/[0.08] shadow-[0_0_0_1px_rgba(240,162,2,0.15),0_16px_40px_-24px_rgba(240,162,2,0.5)]"
-          : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05]"
+          : "border-foreground/10 bg-foreground/[0.03] hover:border-foreground/20 hover:bg-foreground/[0.05]"
       )}
     >
       <RadioGroupItem id={value} value={value} className="sr-only" />
@@ -66,7 +66,7 @@ function RoleOption({ value, current, icon: Icon, title, description }) {
             "grid h-9 w-9 place-items-center rounded-xl border transition-colors duration-300",
             active
               ? "border-primary/30 bg-primary/15 text-primary"
-              : "border-white/10 bg-white/[0.05] text-muted-foreground group-hover:text-foreground"
+              : "border-foreground/10 bg-foreground/[0.05] text-muted-foreground group-hover:text-foreground"
           )}
         >
           <Icon className="h-4 w-4" />
@@ -109,7 +109,7 @@ export default function Register() {
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch lg:gap-8">
         <Reveal
           variant="left"
-          className="relative hidden overflow-hidden rounded-[2rem] border border-white/10 bg-space-indigo/40 p-10 backdrop-blur-2xl lg:flex lg:flex-col lg:justify-between"
+          className="force-dark relative hidden overflow-hidden rounded-[2rem] border border-foreground/10 bg-space-indigo/70 p-10 text-foreground backdrop-blur-2xl lg:flex lg:flex-col lg:justify-between"
         >
           <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
           <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-golden-orange/25 blur-[90px] animate-pulse-glow" />
@@ -147,7 +147,7 @@ export default function Register() {
                   Busque, compare e contrate o profissional certo.
                 </p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <div className="rounded-2xl border border-foreground/10 bg-foreground/[0.04] p-4">
                 <Briefcase className="h-5 w-5 text-fiery-terracotta" />
                 <p className="mt-3 text-sm font-semibold text-foreground">
                   Profissional
@@ -282,7 +282,7 @@ export default function Register() {
                         aria-label={
                           showPassword ? "Ocultar senha" : "Mostrar senha"
                         }
-                        className="absolute right-2.5 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
+                        className="absolute right-2.5 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-lg text-muted-foreground transition-colors hover:bg-foreground/10 hover:text-foreground"
                       >
                         {showPassword ? (
                           <EyeOff className="h-4 w-4" />
@@ -334,7 +334,7 @@ export default function Register() {
                 </p>
               </form>
 
-              <p className="mt-6 border-t border-white/[0.07] pt-5 text-center text-xs text-muted-foreground">
+              <p className="mt-6 border-t border-foreground/[0.07] pt-5 text-center text-xs text-muted-foreground">
                 Já tem conta?{" "}
                 <Link
                   to="/login"

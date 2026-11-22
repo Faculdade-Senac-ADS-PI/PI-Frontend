@@ -11,12 +11,12 @@ const badgeVariants = cva(
         default:
           "border-primary/25 bg-primary/15 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
         secondary:
-          "border-white/10 bg-white/[0.07] text-foreground/80 backdrop-blur-md",
+          "border-foreground/10 bg-foreground/[0.07] text-foreground/80 backdrop-blur-md",
         destructive:
           "border-destructive/30 bg-destructive/15 text-destructive",
         success:
-          "border-emerald-400/25 bg-emerald-400/15 text-emerald-300",
-        outline: "border-white/15 bg-transparent text-foreground/80",
+          "border-emerald-500/25 bg-emerald-500/15 text-emerald-700 dark:text-emerald-300",
+        outline: "border-foreground/15 bg-transparent text-foreground/80",
       },
     },
     defaultVariants: {

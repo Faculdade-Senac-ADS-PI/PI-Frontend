@@ -147,7 +147,7 @@ function Hero() {
                 <Link
                   key={item}
                   to={`/buscar?search=${encodeURIComponent(item)}`}
-                  className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+                  className="rounded-full border border-foreground/10 bg-foreground/[0.04] px-3 py-1 text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
                 >
                   {item}
                 </Link>
@@ -159,7 +159,7 @@ function Hero() {
             <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
               {STATS.slice(0, 3).map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-2.5">
-                  <span className="grid h-9 w-9 place-items-center rounded-xl border border-white/10 bg-white/[0.05] text-primary">
+                  <span className="grid h-9 w-9 place-items-center rounded-xl border border-foreground/10 bg-foreground/[0.05] text-primary">
                     <Icon className="h-4 w-4" />
                   </span>
                   <div>
@@ -179,8 +179,8 @@ function Hero() {
         <Reveal variant="scale" delay={220} className="relative">
           <div className="relative mx-auto max-w-[28rem]">
             <div className="absolute -inset-10 animate-pulse-glow rounded-full bg-golden-orange/10 blur-3xl" />
-            <div className="absolute inset-[-1.75rem] rounded-[3rem] border border-white/[0.05]" />
-            <div className="absolute inset-[-3.5rem] rounded-[4rem] border border-white/[0.035]" />
+            <div className="absolute inset-[-1.75rem] rounded-[3rem] border border-foreground/[0.05]" />
+            <div className="absolute inset-[-3.5rem] rounded-[4rem] border border-foreground/[0.035]" />
 
             <div className="glass-strong relative animate-float-slow rounded-[2rem] p-5">
               <div className="flex items-center justify-between">
@@ -191,7 +191,7 @@ function Hero() {
                   </span>
                   Profissionais online
                 </span>
-                <span className="rounded-full border border-white/10 bg-white/[0.06] px-2.5 py-1 text-[10px] text-muted-foreground">
+                <span className="rounded-full border border-foreground/10 bg-foreground/[0.06] px-2.5 py-1 text-[10px] text-muted-foreground">
                   agora
                 </span>
               </div>
@@ -201,10 +201,10 @@ function Hero() {
                   <Link
                     key={worker.id}
                     to={`/profissional/${worker.id}`}
-                    className="group flex items-center gap-3 rounded-2xl border border-transparent p-2.5 transition-all duration-300 hover:border-white/10 hover:bg-white/[0.05]"
+                    className="group flex items-center gap-3 rounded-2xl border border-transparent p-2.5 transition-all duration-300 hover:border-foreground/10 hover:bg-foreground/[0.05]"
                     style={{ animationDelay: `${index * 120}ms` }}
                   >
-                    <Avatar className="h-11 w-11 border border-white/10">
+                    <Avatar className="h-11 w-11 border border-foreground/10">
                       <AvatarImage src={worker.photo} alt={worker.name} />
                       <AvatarFallback>{worker.name.charAt(0)}</AvatarFallback>
                     </Avatar>
@@ -232,18 +232,18 @@ function Hero() {
                 ))}
               </div>
 
-              <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/[0.07] bg-white/[0.035] p-3">
+              <div className="mt-4 flex items-center justify-between rounded-2xl border border-foreground/[0.07] bg-foreground/[0.035] p-3">
                 <div className="flex -space-x-2">
                   {workers.slice(0, 4).map((worker) => (
                     <Avatar
                       key={worker.id}
-                      className="h-8 w-8 border-2 border-[#151c38]"
+                      className="h-8 w-8 border-2 border-background"
                     >
                       <AvatarImage src={worker.photo} alt="" />
                       <AvatarFallback>{worker.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                   ))}
-                  <span className="grid h-8 w-8 place-items-center rounded-full border-2 border-[#151c38] bg-white/10 text-[10px] font-semibold text-foreground">
+                  <span className="grid h-8 w-8 place-items-center rounded-full border-2 border-background bg-foreground/10 text-[10px] font-semibold text-foreground">
                     +2k
                   </span>
                 </div>
@@ -286,7 +286,7 @@ function Hero() {
 
       <div className="shell relative pb-6">
         <Reveal>
-          <div className="glass grid grid-cols-2 gap-y-6 rounded-2xl px-4 py-6 sm:grid-cols-4 sm:divide-x sm:divide-white/[0.07]">
+          <div className="glass grid grid-cols-2 gap-y-6 rounded-2xl px-4 py-6 sm:grid-cols-4 sm:divide-x sm:divide-foreground/[0.07]">
             {STATS.map(({ icon: Icon, value, label }) => (
               <div
                 key={label}
@@ -364,7 +364,7 @@ function Categories() {
 function FeaturedWorkers() {
   return (
     <section className="relative py-16 sm:py-20">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent" />
       <div className="shell">
         <SectionHeader
           eyebrow="Reputação em primeiro lugar"
@@ -411,7 +411,7 @@ function HowItWorks() {
                 <span className="relative grid h-14 w-14 place-items-center rounded-2xl border border-primary/20 bg-primary/10 text-primary transition-all duration-500 group-hover:scale-105 group-hover:bg-primary/15 group-hover:shadow-glow">
                   <Icon className="h-6 w-6" />
                 </span>
-                <span className="font-display text-4xl font-extrabold text-white/[0.07] transition-colors duration-500 group-hover:text-primary/20">
+                <span className="font-display text-4xl font-extrabold text-foreground/[0.07] transition-colors duration-500 group-hover:text-primary/20">
                   0{index + 1}
                 </span>
               </div>
@@ -492,7 +492,7 @@ function ForWorkers() {
                   </span>
                 </div>
 
-                <div className="mt-4 rounded-2xl border border-white/[0.07] bg-white/[0.035] p-4">
+                <div className="mt-4 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.035] p-4">
                   <div className="flex items-center gap-3">
                     <Avatar className="h-10 w-10">
                       <AvatarImage src="https://i.pravatar.cc/100?img=44" alt="" />
@@ -507,7 +507,7 @@ function ForWorkers() {
                       </p>
                     </div>
                   </div>
-                  <div className="mt-3 flex items-center justify-between rounded-xl bg-white/[0.04] px-3 py-2 text-xs">
+                  <div className="mt-3 flex items-center justify-between rounded-xl bg-foreground/[0.04] px-3 py-2 text-xs">
                     <span className="text-muted-foreground">Orçamento</span>
                     <span className="font-semibold text-primary">R$ 280,00</span>
                   </div>
@@ -515,7 +515,7 @@ function ForWorkers() {
                     <span className="rounded-xl border border-emerald-400/25 bg-emerald-400/10 py-2 text-center text-xs font-semibold text-emerald-300">
                       Aceitar
                     </span>
-                    <span className="rounded-xl border border-white/10 bg-white/[0.04] py-2 text-center text-xs font-medium text-muted-foreground">
+                    <span className="rounded-xl border border-foreground/10 bg-foreground/[0.04] py-2 text-center text-xs font-medium text-muted-foreground">
                       Ver detalhes
                     </span>
                   </div>
@@ -529,7 +529,7 @@ function ForWorkers() {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-2 py-2.5"
+                      className="rounded-xl border border-foreground/[0.06] bg-foreground/[0.03] px-2 py-2.5"
                     >
                       <p className="font-display text-sm font-bold text-foreground">
                         {item.value}
@@ -571,8 +571,8 @@ function Testimonials() {
               <p className="mt-4 text-sm leading-relaxed text-foreground/85">
                 “{testimonial.text}”
               </p>
-              <div className="mt-6 flex items-center gap-3 border-t border-white/[0.07] pt-5">
-                <Avatar className="h-10 w-10 border border-white/10">
+              <div className="mt-6 flex items-center gap-3 border-t border-foreground/[0.07] pt-5">
+                <Avatar className="h-10 w-10 border border-foreground/10">
                   <AvatarImage src={testimonial.photo} alt={testimonial.name} />
                   <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                 </Avatar>
@@ -603,7 +603,7 @@ function FinalCta() {
   return (
     <section className="shell pb-8 pt-6">
       <Reveal variant="scale">
-        <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-space-indigo/70 via-[#1b1630]/70 to-[#241318]/60 p-9 text-center backdrop-blur-2xl sm:p-14">
+        <div className="force-dark relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-space-indigo/70 via-[#1b1630]/70 to-[#241318]/60 p-9 text-center text-foreground backdrop-blur-2xl sm:p-14">
           <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
           <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[30rem] -translate-x-1/2 rounded-full bg-golden-orange/20 blur-[90px] animate-pulse-glow" />
 
